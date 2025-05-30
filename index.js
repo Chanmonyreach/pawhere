@@ -1,6 +1,7 @@
 const express = require('express');
 const admin = require('firebase-admin');
 const bodyParser = require('body-parser');
+const fs = require('fs'); // <-- You missed this
 const app = express();
 const PORT = 8081;
 
