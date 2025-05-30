@@ -2,7 +2,7 @@ const express = require('express');
 const admin = require('firebase-admin');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 8081;
+const PORT = process.env.PORT || 8081;
 
 // Load your Firebase service account key
 const serviceAccount = require('./serviceAccountKey.json');
