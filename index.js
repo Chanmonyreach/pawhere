@@ -5,7 +5,7 @@ const app = express();
 const PORT = 8081;
 
 // Load your Firebase service account key
-const serviceAccount = require('./serviceAccountKey.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
