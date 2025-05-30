@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 8081;
 
-// Parse service account JSON from environment variable
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_JSON);
+// Load your Firebase service account key
+const serviceAccount = require('./serviceAccountKey.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
