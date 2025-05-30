@@ -4,8 +4,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 8081;
 
-// Load your Firebase service account key
-const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+// Path to the secret file mounted by Render
+const serviceAccountPath = '/run/secrets/serviceAccountKey.json';
+
+// Read and parse the secret JSON file
+const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf8'));
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
