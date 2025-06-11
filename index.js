@@ -44,6 +44,6 @@ app.get('/', (req, res) => {
   res.send('📡 GPS Data Forwarding Server is Running!');
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running at http://0.0.0.0:${port}`);
 });
